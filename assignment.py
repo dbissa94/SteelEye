@@ -104,7 +104,7 @@ class XmlParser:
         # After this we can delete the other csv and xml files
 
 
-def event_handler_name(event, context):
+def event_handler(event, context):
     parser_obj = XmlParser(
         link="https://registers.esma.europa.eu/solr/esma_registers_firds_files/select?q=*&fq=publication_date:%5B2020-01-08T00:00:00Z+TO+2020-01-08T23:59:59Z%5D&wt=xml&indent=true&start=0&rows=100")
     parser_obj.upload_xml_to_csv_to_s3()
@@ -112,4 +112,4 @@ def event_handler_name(event, context):
 
 
 # if __name__ == "__main__":
-#     event_handler_name(event=None, context=None)
+#     event_handler(event=None, context=None)
